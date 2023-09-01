@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock title %}
+
+{% block body %}
+      <section class="text-gray-600 body-font -my-12">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <b><h2 class="text-xs text-dark tracking-widest font-lg title-font mb-1">Machine learning project</h2></b>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Lemon Quality Detection</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">An inadequate amount of a nutrient is a deficiency. Deficiencies can be due to a number of causes including an inadequacy in nutrient intake, called a dietary deficiency, or any of several conditions that interfere with the utilization of a nutrient within an organism. Some of the conditions that can interfere with nutrient utilization include problems with nutrient absorption, substances that cause a greater than normal need for a nutrient, conditions that cause nutrient destruction, and conditions that cause greater nutrient excretion.</p>
+            
+
+          </div>
+          <div class="center">
+            <form action="/prediction" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Select Lemon image</label>
+                  <input type="file" class="form-control" id="fruit" name="fruit" aria-describedby="emailHelp">
+                </div>
+              
+                <b><button type="submit" class="inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">Submit</button></b>
+              </form>
+          </div>
+          <div>
+            <br><p class="text-dark"><b>{{prediction}}</b></p><br>
+            <p class="text-dark "><b>{{confidence}}</b></p></div>
+        </div>
+        
+      </section>
+      {% endblock body %}
